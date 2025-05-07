@@ -1,0 +1,6 @@
+  @PostMapping(path="/help")
+  public String postHelp(@RequestParam String postalCode, @RequestParam String streetAddress) {
+    SuperReport newSuperReport = new SuperReport(postalCode, streetAddress, "");
+    superReportRepository.save(newSuperReport);
+    return "!";
+  }
